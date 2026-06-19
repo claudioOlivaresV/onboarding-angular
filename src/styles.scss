@@ -1,1 +1,238 @@
 /* You can add global styles to this file, and also import other style files */
+/* ===============================
+   VARIABLES / DESIGN TOKENS
+================================ */
+
+:root {
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  --background: #f8fafc;
+  --foreground: #0f172a;
+
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+
+  --primary: #6d28d9;
+  --primary-hover: #5b21b6;
+  --primary-foreground: #ffffff;
+
+  --secondary: #f1f5f9;
+  --secondary-foreground: #334155;
+
+  --muted: #f8fafc;
+  --muted-foreground: #64748b;
+
+  --border: #e2e8f0;
+
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --danger: #dc2626;
+
+  --input-background: #ffffff;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+
+  --shadow-lg: 0 20px 50px rgba(109, 40, 217, 0.15);
+
+  --gradient-primary: linear-gradient(135deg, #7c3aed, #4f46e5);
+}
+
+/* ===============================
+   DARK MODE
+================================ */
+
+.dark {
+  --background: #020617;
+  --foreground: #f8fafc;
+
+  --card: #0f172a;
+  --card-foreground: #f8fafc;
+
+  --primary: #c4b5fd;
+  --primary-hover: #ddd6fe;
+  --primary-foreground: #1e1b4b;
+
+  --secondary: #1e293b;
+
+  --secondary-foreground: #e2e8f0;
+
+  --muted: #1e293b;
+
+  --muted-foreground: #94a3b8;
+
+  --border: rgba(255, 255, 255, 0.1);
+
+  --input-background: #0f172a;
+}
+
+/* ===============================
+   RESET GLOBAL
+================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+
+  background: var(--background);
+
+  color: var(--foreground);
+
+  font-family: Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===============================
+   MATERIAL OVERRIDES
+================================ */
+
+.mat-mdc-card {
+  border-radius: var(--radius-lg) !important;
+
+  box-shadow: var(--shadow-md) !important;
+}
+
+.mat-mdc-button {
+  border-radius: var(--radius-md) !important;
+}
+
+.mat-mdc-form-field {
+  width: 100%;
+}
+
+/* ===============================
+   UTILITIES
+================================ */
+
+.container {
+  width: 100%;
+
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 24px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.card {
+  background: var(--card);
+
+  color: var(--card-foreground);
+
+  border-radius: var(--radius-lg);
+
+  padding: 32px;
+
+  box-shadow: var(--shadow-md);
+}
+
+.primary-button {
+  background: var(--gradient-primary) !important;
+
+  color: var(--primary-foreground) !important;
+}
+
+/* ===============================
+   ONBOARDING
+================================ */
+
+.onboarding-container {
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 24px;
+}
+
+.onboarding-card {
+  width: 100%;
+
+  max-width: 480px;
+
+  background: var(--card);
+
+  border-radius: var(--radius-xl);
+
+  padding: 32px;
+
+  box-shadow: var(--shadow-lg);
+}
+
+.step-title {
+  font-size: 28px;
+
+  font-weight: 700;
+
+  margin-bottom: 8px;
+}
+
+.step-description {
+  color: var(--muted-foreground);
+
+  margin-bottom: 24px;
+}
+
+/* ===============================
+   INPUTS
+================================ */
+
+input {
+  color: var(--foreground);
+}
+
+::placeholder {
+  color: var(--muted-foreground);
+}
+
+/* ===============================
+   ANIMATIONS
+================================ */
+
+.fade-in {
+  animation: fade 0.25s ease-in-out;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: none;
+  }
+}
