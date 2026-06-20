@@ -35,51 +35,14 @@
 
     <!-- CARD PREVIEW -->
     <div class="card-preview">
+      <app-card></app-card>
       <!-- <app-card-preview [displayName]="fullName" [amount]="amount">
       </app-card-preview> -->
     </div>
 
     <!-- MAIN CONTENT -->
-    <section class="content">
-      <!-- LOADING -->
-
-      <!-- <app-success-screen *ngIf="status === 'success'" (reset)="reset()">
-      </app-success-screen> -->
-
-      <!-- ERROR -->
-      <!-- <app-error-screen
-        *ngIf="status === 'error'"
-        (retry)="submit()"
-        (back)="status = 'form'"
-      >
-      </app-error-screen> -->
-
-      <!-- STEP 1 -->
-      <!-- <app-step-personal-info
-        *ngIf="status === 'form' && step === 1"
-        [defaultValues]="personal"
-        (next)="onPersonalNext($event)"
-      >
-      </app-step-personal-info> -->
-
-      <!-- STEP 2 -->
-      <!-- <app-step-amount
-        *ngIf="status === 'form' && step === 2"
-        [defaultAmount]="amount"
-        [fullName]="fullName"
-        (next)="onAmountNext($event)"
-        (back)="step = 1"
-      >
-      </app-step-amount> -->
-
-      <!-- STEP 3 -->
-      <!-- <app-step-summary
-        *ngIf="status === 'form' && step === 3"
-        [data]="summaryData"
-        (back)="step = 2"
-        (confirm)="submit()"
-      >
-      </app-step-summary> -->
+    <section>
+      <router-outlet></router-outlet>
     </section>
 
     <!-- FOOTER -->

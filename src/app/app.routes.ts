@@ -10,6 +10,6 @@ export const routes: Routes = [
 
   { path: 'personal', component: DatosPersonalesComponent },
   { path: 'monto', component: MontoComponent },
-  { path: 'confirm', component: ResumenComponent },
+  { path: 'resumen', component: ResumenComponent },
   { path: 'comprobante', component: ComprobanteComponent },
 ];
