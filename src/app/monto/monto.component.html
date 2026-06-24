@@ -13,6 +13,7 @@
         @for (option of options; track option.value) {
           <button
             mat-stroked-button
+            color="primary"
             class="option-card"
             [class.active]="selectedOption() === option.value"
             (click)="selectOption(option.value)"
@@ -32,8 +33,16 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-12">
-        <button mat-flat-button class="w-100" (click)="continuar()">
+      <div class="col-6">
+        <button mat-stroked-button color="primary">Volver</button>
+      </div>
+      <div class="col-6">
+        <button
+          mat-flat-button
+          class="w-100"
+          color="primary"
+          (click)="continuar()"
+        >
           Continuar
         </button>
       </div>

@@ -1,15 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
-/* ===============================
-   VARIABLES / DESIGN TOKENS
-================================ */
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+/* FIX FONT GLOBAL MDC */
+:root {
+  --mdc-typography-font-family: "Inter", sans-serif;
+}
+
+html,
+body {
+  font-family: "Inter", sans-serif !important;
+}
 
 :root {
+  --mdc-typography-font-family: "Inter", sans-serif;
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
   --radius-xl: 24px;
 
-  --background: #f8fafc;
+  --background: #f5f3ff;
   --foreground: #0f172a;
 
   --card: #ffffff;
@@ -84,7 +94,6 @@ html,
 body {
   height: 100%;
 }
-
 body {
   margin: 0;
 
@@ -92,7 +101,7 @@ body {
 
   color: var(--foreground);
 
-  font-family: Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Inter", sans-serif !important;
 
   -webkit-font-smoothing: antialiased;
 }
@@ -118,16 +127,6 @@ body {
 /* ===============================
    UTILITIES
 ================================ */
-
-.container {
-  width: 100%;
-
-  max-width: 1200px;
-
-  margin: auto;
-
-  padding: 24px;
-}
 
 .flex {
   display: flex;
@@ -235,4 +234,107 @@ input {
 
     transform: none;
   }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+}
+
+.mat-mdc-unelevated-button.mat-primary,
+.mat-mdc-raised-button.mat-primary,
+.mat-mdc-flat-button.mat-primary {
+  background: var(--primary) !important;
+  color: var(--primary-foreground) !important;
+}
+.mdc-typography,
+.mat-mdc-card,
+.mat-mdc-card-title,
+.mat-mdc-card-subtitle,
+.mat-mdc-card-content,
+.mdc-text-field,
+.mdc-text-field__input,
+.mdc-floating-label,
+.mat-mdc-input-element {
+  font-family: "Inter", sans-serif !important;
+}
+.mat-mdc-form-field.mat-focused {
+  --mdc-theme-primary: var(--primary);
+  --mdc-outlined-text-field-focus-outline-color: var(--primary);
+  --mdc-outlined-text-field-outline-color: var(--primary);
+}
+
+/* Label */
+.mat-mdc-form-field.mat-focused .mdc-floating-label {
+  color: var(--primary) !important;
+}
+
+/* Cursor */
+.mat-mdc-input-element {
+  caret-color: var(--primary);
+}
+.mat-mdc-select-panel {
+  border-radius: var(--radius-md);
+}
+
+/* Focus trigger */
+.mat-mdc-form-field.mat-focused .mat-mdc-select-trigger {
+  color: var(--primary);
+}
+
+/* Arrow */
+.mat-mdc-select-arrow {
+  color: var(--primary);
+}
+
+/* Selected option */
+.mat-mdc-option.mat-mdc-option-active,
+.mat-mdc-option.mat-selected {
+  color: var(--primary);
+}
+.mat-mdc-option {
+  border-radius: 8px;
+  margin: 2px 4px;
+  min-height: 40px;
+  transition: background 0.2s ease;
+}
+
+/* Hover suave (NO gris fuerte) */
+.mat-mdc-option:hover {
+  background: rgba(109, 40, 217, 0.06) !important;
+}
+.mat-mdc-select-panel {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.92) !important;
+}
+.mat-mdc-option.mdc-list-item--selected::before,
+.mat-mdc-option::before {
+  opacity: 0 !important;
+}
+.mat-mdc-select-panel .mat-mdc-option {
+  font-size: 14px;
+  padding: 10px 12px;
+}
+
+.mat-mdc-card {
+  background: var(--card) !important;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg) !important;
+  box-shadow: none !important;
+}
+.mat-mdc-card {
+  transition: all 0.25s ease !important;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06) !important;
+}
+
+/* Hover más premium */
+.mat-mdc-card:hover {
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1) !important;
+}
+.mat-mdc-card {
+  border: 1px solid rgba(148, 163, 184, 0.25) !important;
 }
