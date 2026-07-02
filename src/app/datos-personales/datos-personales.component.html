@@ -76,8 +76,15 @@
     </div>
     <div class="row">
       <div class="col-12">
-        <button mat-flat-button color="primary" (click)="continuar()">
+        <button
+          mat-flat-button
+          color="primary"
+          class="w-100"
+          (click)="continuar()"
+        >
           Continuar
+          <lucide-icon [img]="ArrowRight" [size]="18" [strokeWidth]="2">
+          </lucide-icon>
         </button>
       </div>
     </div>

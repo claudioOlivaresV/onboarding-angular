@@ -4,6 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { Router } from '@angular/router';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatInputModule } from '@angular/material/input';
+import { ArrowLeft, ArrowRight, LucideAngularModule } from 'lucide-angular';
 
 @Component({
   selector: 'app-monto',
@@ -12,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
     MatButtonModule,
     MatButtonToggleModule,
     MatInputModule,
+    LucideAngularModule,
   ],
   templateUrl: './monto.component.html',
   styleUrl: './monto.component.scss',
@@ -25,6 +27,8 @@ export class MontoComponent {
     { value: '5', label: '$250.000' },
     { value: '6', label: '$500.000' },
   ];
+  ArrowRight = ArrowRight;
+  ArrowLeft = ArrowLeft;
   selectedOption = signal<string | null>(null);
   constructor(private router: Router) {}
   hideSingleSelectionIndicator = signal(false);

@@ -472,3 +472,23 @@ button.mat-mdc-outlined-button.mat-primary {
 .mdc-text-field__input {
   color: var(--secondary-foreground) !important;
 }
+.mat-mdc-progress-bar {
+  height: 12px !important;
+  border-radius: 999px;
+  overflow: hidden;
+
+  --mdc-linear-progress-active-indicator-color: var(--primary);
+  --mdc-linear-progress-track-color: rgba(109, 40, 217, 0.12);
+}
+
+.mat-mdc-progress-bar .mdc-linear-progress,
+.mat-mdc-progress-bar .mdc-linear-progress__buffer,
+.mat-mdc-progress-bar .mdc-linear-progress__bar {
+  height: 12px !important;
+}
+.mdc-linear-progress__bar-inner {
+  border-top-width: var(
+    --mdc-linear-progress-active-indicator-height,
+    12px
+  ) !important;
+}

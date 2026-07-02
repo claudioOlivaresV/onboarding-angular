@@ -5,6 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
+import { ArrowRight, LucideAngularModule } from 'lucide-angular';
 
 @Component({
   selector: 'app-datos-personales',
@@ -14,11 +15,14 @@ import { Router } from '@angular/router';
     MatInputModule,
     MatSelectModule,
     MatButtonModule,
+    LucideAngularModule,
   ],
   templateUrl: './datos-personales.component.html',
   styleUrl: './datos-personales.component.scss',
 })
 export class DatosPersonalesComponent {
+  ArrowRight = ArrowRight;
+
   constructor(private router: Router) {}
 
   continuar(): void {
