@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CardComponent } from '../components/card/card.component';
@@ -20,4 +20,9 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 })
 export class OnboardingComponent {
   CreditCard = CreditCard;
+  private router = inject(Router);
+  currentYear = new Date().getFullYear();
+  get isComprobante(): boolean {
+    return this.router.url === '/comprobante';
+  }
 }

@@ -40,7 +40,7 @@ body {
 
   --success: #16a34a;
   --warning: #f59e0b;
-  --danger: #dc2626;
+  --danger: #be123c;
 
   --input-background: #ffffff;
 
@@ -491,4 +491,20 @@ button.mat-mdc-outlined-button.mat-primary {
     --mdc-linear-progress-active-indicator-height,
     12px
   ) !important;
+}
+.text-muted {
+  color: var(--muted-foreground);
+}
+.c-primary-text {
+  color: var(--primary);
+}
+.mat-mdc-form-field.mat-form-field-invalid {
+  --mdc-outlined-text-field-error-outline-color: var(--danger) !important;
+  --mdc-outlined-text-field-error-focus-outline-color: var(--danger) !important;
+  --mat-form-field-error-text-color: var(--danger) !important;
+}
+.mat-mdc-form-field-error {
+  color: var(--danger) !important;
+  font-size: 12px;
+  font-weight: 500;
 }

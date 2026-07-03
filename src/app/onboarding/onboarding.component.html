@@ -30,20 +30,24 @@
 
           <h3 class="brand mb-0">Tarjeta Digital</h3>
         </header>
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <p>Pase 1 de 3</p>
-          <div class="step-indicator py-1 px-3 rounded-pill fw-bold">
-            <span>Datos</span>
+        @if (!isComprobante) {
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <p>Pase 1 de 3</p>
+            <div class="step-indicator py-1 px-3 rounded-pill fw-bold">
+              <span>Datos</span>
+            </div>
           </div>
-        </div>
 
-        <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+          <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+        }
         <div class="liquid-card px-1 py-3">
           <!-- PROGRESS -->
           <div class="row d-flex justify-content-center">
-            <div class="col-12 mb-4 mt-2 d-flex justify-content-center">
-              <app-card></app-card>
-            </div>
+            @if (!isComprobante) {
+              <div class="col-12 mb-4 mt-2 d-flex justify-content-center">
+                <app-card></app-card>
+              </div>
+            }
             <div class="col-12">
               <!-- MAIN CONTENT -->
               <section>
@@ -60,7 +64,9 @@
         </div>
 
         <!-- FOOTER -->
-        <footer class="footer">© {{ "2024" }} Nova Pay · Chile</footer>
+        <footer class="footer">
+          © {{ currentYear }} Tarjeta digital Angular 19 · Chile
+        </footer>
       </div>
     </div>
   </div>
