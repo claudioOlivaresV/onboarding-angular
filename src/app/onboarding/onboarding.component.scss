@@ -1,0 +1,130 @@
+/* =========================
+   PAGE LAYOUT
+========================= */
+
+.onboarding-page {
+  position: relative;
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background: var(--background);
+}
+
+/* =========================
+   BACKGROUND GLOW
+========================= */
+
+.background-glow {
+  position: absolute;
+
+  top: -40px;
+
+  left: 50%;
+
+  transform: translateX(0);
+
+  width: 640px;
+
+  height: 420px;
+
+  border-radius: 999px;
+
+  opacity: 0.3;
+
+  filter: blur(220px);
+
+  background: var(--gradient-primary);
+
+  pointer-events: none;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 24px;
+}
+
+.logo {
+  width: 36px;
+
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: var(--gradient-primary);
+
+  box-shadow: var(--shadow-soft);
+}
+
+.logo-icon {
+  font-size: 18px;
+
+  color: var(--primary-foreground) !important;
+}
+
+.brand {
+  letter-spacing: -0.02em;
+}
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-wrapper {
+  margin-bottom: 24px;
+}
+
+/* =========================
+   CARD PREVIEW
+========================= */
+
+.card-preview {
+  display: flex;
+
+  justify-content: center;
+
+  margin-bottom: 24px;
+}
+
+/* =========================
+   CONTENT AREA
+========================= */
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  margin-top: 24px;
+
+  text-align: center;
+
+  font-size: 12px;
+
+  color: var(--muted-foreground);
+}
+.step-indicator {
+  color: var(--primary);
+  background-color: color-mix(in srgb, var(--primary) 10%, transparent);
+  font-size: 11px;
+}
