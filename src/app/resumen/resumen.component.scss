@@ -1,0 +1,19 @@
+.summary-list {
+  .row:not(:last-child) {
+    @media (max-width: 767.98px) {
+      position: relative;
+      padding-bottom: 12px;
+      margin-bottom: 12px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 14px;
+        right: 14px;
+        height: 1px;
+        background: var(--border);
+      }
+    }
+  }
+}
