@@ -1,14 +1,3 @@
-<!-- <h2>Onboarding</h2> -->
-<!-- 
-<div class="step-container">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <router-outlet></router-outlet>
-      </div>
-    </div>
-  </div>
-</div> -->
 <main class="onboarding-page">
   <!-- Background glow -->
   <!-- <div class="background-glow"></div> -->
@@ -32,13 +21,16 @@
         </header>
         @if (!isComprobante) {
           <div class="d-flex justify-content-between align-items-center mb-3">
-            <p>Pase 1 de 3</p>
+            <p>Paso {{ currentStep() }} de 3</p>
             <div class="step-indicator py-1 px-3 rounded-pill fw-bold">
-              <span>Datos</span>
+              <span>{{ stepTitle() }}</span>
             </div>
           </div>
 
-          <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+          <mat-progress-bar
+            mode="determinate"
+            [value]="progress()"
+          ></mat-progress-bar>
         }
         <div class="liquid-card px-1 py-3">
           <!-- PROGRESS -->

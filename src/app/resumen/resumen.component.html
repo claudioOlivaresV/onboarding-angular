@@ -10,42 +10,44 @@
   <mat-card-content>
     <div class="row mb-2">
       <div class="col-6 text-muted">Nombre</div>
-      <div class="col-6 text-end">Nombre</div>
+      <div class="col-6 text-end">{{ datos().nombre }}</div>
     </div>
     <div class="row mb-2">
       <div class="col-6 text-muted">RUT</div>
-      <div class="col-6 text-end">RUT</div>
+      <div class="col-6 text-end">{{ datos().rut }}</div>
     </div>
     <div class="row mb-2">
       <div class="col-6 text-muted">Correo</div>
-      <div class="col-6 text-end">Correo</div>
+      <div class="col-6 text-end">{{ datos().email }}</div>
     </div>
     <div class="row mb-2">
       <div class="col-6 text-muted">Teléfono</div>
-      <div class="col-6 text-end">Teléfono</div>
+      <div class="col-6 text-end">{{ datos().telefono }}</div>
     </div>
     <div class="row mb-2">
       <div class="col-6 text-muted">Región</div>
-      <div class="col-6 text-end">Región</div>
+      <div class="col-6 text-end">{{ datos().region }}</div>
     </div>
     <div class="row mb-2">
       <div class="col-6 text-muted">Comuna</div>
-      <div class="col-6 text-end">Comuna</div>
+      <div class="col-6 text-end">{{ datos().comuna }}</div>
     </div>
     <div class="row mb-2">
       <div class="col-6 text-muted">Dirección</div>
-      <div class="col-6 text-end">Dirección</div>
+      <div class="col-6 text-end">{{ datos().direccion }}</div>
     </div>
     <div class="row">
       <div class="col-6">Monto inicial</div>
-      <div class="col-6 text-end c-primary-text fw-bold">$10.000</div>
+      <div class="col-6 text-end c-primary-text fw-bold">
+        {{ monto() | currency: "CLP" : "symbol" : "1.0-0" }}
+      </div>
       <div class="col-12">
         <div class="border-bottom w-100 pt-3"></div>
       </div>
     </div>
     <div class="row mt-4">
       <div class="col-5">
-        <button mat-stroked-button color="primary w-100">
+        <button mat-stroked-button color="primary w-100" (click)="atras()">
           <lucide-icon
             [img]="ArrowLeft"
             [size]="18"

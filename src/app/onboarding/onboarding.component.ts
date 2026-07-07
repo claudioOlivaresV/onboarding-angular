@@ -5,6 +5,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CardComponent } from '../components/card/card.component';
 import { LucideAngularModule, CreditCard } from 'lucide-angular';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { OnboardingStore } from '../../shared/OnboardingStore.store';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,13 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
   styleUrl: './onboarding.component.scss',
 })
 export class OnboardingComponent {
+  private readonly store = inject(OnboardingStore);
+
+  readonly progress = this.store.progress;
+
+  readonly currentStep = this.store.currentStep;
+
+  readonly stepTitle = this.store.stepTitle;
   CreditCard = CreditCard;
   private router = inject(Router);
   currentYear = new Date().getFullYear();

@@ -97,6 +97,7 @@ export class DatosPersonalesComponent {
     this.form.controls.region.valueChanges.subscribe((region: any) => {
       this.comunas = CHILE_REGIONS[region] ?? [];
       this.form.controls.comuna.reset(null);
+      this.store.setStep(1);
     });
     this.form.valueChanges.subscribe((value) => {
       console.log(value);

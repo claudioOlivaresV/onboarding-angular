@@ -1,7 +1,9 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { Router } from '@angular/router';
+
 type Status = 'loading' | 'success' | 'error';
 
 @Component({
@@ -13,6 +15,7 @@ type Status = 'loading' | 'success' | 'error';
 export class ComprobanteComponent {
   status = signal<Status>('loading');
 
+  constructor(private router: Router) {}
   ngOnInit() {
     setTimeout(() => {
       this.status.set('success');
@@ -21,5 +24,9 @@ export class ComprobanteComponent {
 
   reset() {
     this.status.set('loading');
+  }
+
+  irAlInicio() {
+    this.router.navigate(['/']);
   }
 }
